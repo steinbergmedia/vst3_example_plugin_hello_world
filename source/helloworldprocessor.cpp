@@ -66,28 +66,57 @@ tresult PLUGIN_API HelloWorldProcessor::setActive (TBool state)
 //------------------------------------------------------------------------
 tresult PLUGIN_API HelloWorldProcessor::process (Vst::ProcessData& data)
 {
-	//--- First : Read inputs parameter changes-----------
-
-    /*if (data.inputParameterChanges)
+    //--- Read inputs parameter changes-----------
+    if (data.inputParameterChanges)
     {
         int32 numParamsChanged = data.inputParameterChanges->getParameterCount ();
         for (int32 index = 0; index < numParamsChanged; index++)
         {
-            if (auto* paramQueue = data.inputParameterChanges->getParameterData (index))
+            Vst::IParamValueQueue* paramQueue =
+                data.inputParameterChanges->getParameterData (index);
+            if (paramQueue)
             {
                 Vst::ParamValue value;
                 int32 sampleOffset;
                 int32 numPoints = paramQueue->getPointCount ();
                 switch (paramQueue->getParameterId ())
                 {
-				}
-			}
-		}
-	}*/
-	
-	//--- Here you have to implement your processing
+                    case HelloWorldParams::kParamVolId:
+                        if (paramQueue->getPoint (numPoints - 1, sampleOffset, value) ==
+                            kResultTrue)
+                            mParam1 = value;
+                        break;
+                    case HelloWorldParams::kParamOnId:
+                        if (paramQueue->getPoint (numPoints - 1, sampleOffset, value) ==
+                            kResultTrue)
+                            mParam2 = value > 0 ? 1 : 0;
+                        break;
+                    case HelloWorldParams::kBypassId:
+                        if (paramQueue->getPoint (numPoints - 1, sampleOffset, value) ==
+                            kResultTrue)
+                            mBypass = (value > 0.5f);
+                        break;
+                }
+            }
+        }
+    }
 
-	return kResultOk;
+    //--- Process Audio---------------------
+    //--- ----------------------------------
+    if (data.numInputs == 0 || data.numOutputs == 0)
+    {
+        // nothing to do
+        return kResultOk;
+    }
+
+    if (data.numSamples > 0)
+    {
+        // Process Algorithm
+        // Ex: algo.process (data.inputs[0].channelBuffers32, data.outputs[0].channelBuffers32,
+        // data.numSamples);
+    }
+    return kResultOk;
+
 }
 
 //------------------------------------------------------------------------
