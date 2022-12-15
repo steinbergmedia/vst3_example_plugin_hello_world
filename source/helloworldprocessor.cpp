@@ -10,7 +10,7 @@
 
 using namespace Steinberg;
 
-namespace Steinberg__Wurst {
+namespace Steinberg {
 //------------------------------------------------------------------------
 // HelloWorldProcessor
 //------------------------------------------------------------------------
@@ -130,4 +130,4 @@ tresult PLUGIN_API HelloWorldProcessor::getState (IBStream* state)
 }
 
 //------------------------------------------------------------------------
-} // namespace Steinberg__Wurst
+} // namespace Steinberg

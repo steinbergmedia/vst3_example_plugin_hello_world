@@ -4,15 +4,35 @@
 	</fonts>
 	<colors>
 	</colors>
-	<template background-color="~ BlackCColor" background-color-draw-style="filled and stroked" class="CViewContainer" mouse-enabled="true" name="view" opacity="1" origin="0, 0" size="300, 300" transparent="false" wants-focus="false"/>
+	<template background-color="~ BlackCColor" background-color-draw-style="filled and stroked" bitmap="background" class="CViewContainer" mouse-enabled="true" name="view" opacity="1" origin="0, 0" size="350, 120" transparent="false" wants-focus="false">
+		<view background-offset="0, 0" bitmap="onoff_button" class="COnOffButton" control-tag="ParamOn" default-value="1" max-value="1" min-value="0" mouse-enabled="true" opacity="1" origin="113, 18" size="125, 82" tooltip="This is a On/Off Button" transparent="false" wants-focus="true" wheel-inc-value="0.1"/>
+		<view angle-range="270" angle-start="135" background-offset="0, 0" bitmap="animation_knob" circle-drawing="false" class="CAnimKnob" control-tag="ParamVol" corona-color="~ WhiteCColor" corona-dash-dot="false" corona-drawing="false" corona-from-center="false" corona-inset="0" corona-inverted="false" corona-line-cap-butt="false" corona-outline="false" corona-outline-width-add="2" default-value="0.5" handle-color="~ WhiteCColor" handle-line-width="1" handle-shadow-color="~ GreyCColor" height-of-one-image="111" inverse-bitmap="false" max-value="1" min-value="0" mouse-enabled="true" opacity="1" origin="227, 4" size="111, 111" skip-handle-drawing="false" sub-pixmaps="14" tooltip="This is my Volume" transparent="false" value-inset="0" wants-focus="true" wheel-inc-value="0.1" zoom-factor="1.5"/>
+	</template>
 	<custom>
 		<attributes name="FocusDrawing"/>
-		<attributes Path="/Users/renehansen/Developer/bitbucket/HelloWorld/resource/helloworldeditor.uidesc" name="VST3Editor"/>
-		<attributes Grids="1x 1,5x 5,10x 10,12x 12,15x 15" name="UIGridController"/>
+		<attributes Path="P:\SVN\VST_SDK_369\public.sdk\samples\vst\my_plugins\helloworld_with_VSTGUI\resource\plug.uidesc" name="VST3Editor"/>
+		<attributes Size="10, 10" name="UIGridController"/>
 		<attributes SelectedTemplate="view" name="UITemplateController"/>
-		<attributes EditViewScale="1" EditorSize="0, 0, 500, 545" SplitViewSize_0_0="0.7495183044315992804129678006574977189302" SplitViewSize_0_1="0.2119460500963391003104163701209472492337" SplitViewSize_1_0="0.4797687861271676124097496085596503689885" SplitViewSize_1_1="0.5105973025048169411377330106915906071663" SplitViewSize_2_0="0.6400000000000000133226762955018784850836" SplitViewSize_2_1="0.3499999999999999777955395074968691915274" TabSwitchValue="0" Version="1" name="UIEditController"/>
+		<attributes EditViewScale="1" EditorSize="0, 0, 800, 707" SplitViewSize_0_0="0.810495626822157477775476763781625777483" SplitViewSize_0_1="0.16034985422740524740881085108412662521" SplitViewSize_1_0="0.5102040816326530725532961696444544941187" SplitViewSize_1_1="0.4825072886297376295594574457936687394977" SplitViewSize_2_0="0.5200000000000000177635683940025046467781" SplitViewSize_2_1="0.4737500000000000044408920985006261616945" TabSwitchValue="0" Version="1" name="UIEditController"/>
 		<attributes name="UIAttributesController"/>
-		<attributes SelectedRow="7" name="UIViewCreatorDataSource"/>
+		<attributes SelectedRow="0" name="UIViewCreatorDataSource"/>
+		<attributes SelectedRow="0" name="UIBitmapsDataSource"/>
+		<attributes SelectedRow="0" name="UITagsDataSource"/>
 	</custom>
-	<bitmaps/>
+	<bitmaps>
+		<bitmap name="background" path="background.png"/>
+		<bitmap name="animation_knob" path="animation_knob.png"/>
+		<bitmap name="onoff_button" path="onoff_button.png"/>
+		<bitmap name="background_2x" path="background_2x.png"/>
+		<bitmap name="animation_knob_2x" path="animation_knob_2x.png"/>
+		<bitmap name="onoff_button_2x" path="onoff_button_2x.png"/>
+		<bitmap name="background_3x" path="background_3x.png"/>
+		<bitmap name="animation_knob_3x" path="animation_knob_3x.png"/>
+		<bitmap name="onoff_button_3x" path="onoff_button_3x.png"/>
+	</bitmaps>
+	<control-tags>
+		<control-tag name="Bypass" tag="100"/>
+		<control-tag name="ParamOn" tag="1000"/>
+		<control-tag name="ParamVol" tag="102"/>
+	</control-tags>
 </vstgui-ui-description>

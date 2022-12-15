@@ -12,7 +12,7 @@
 #define stringPluginName "HelloWorld"
 
 using namespace Steinberg::Vst;
-using namespace Steinberg__Wurst;
+using namespace Steinberg;
 
 //------------------------------------------------------------------------
 //  VST Plug-in Entry

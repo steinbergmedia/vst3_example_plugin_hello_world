@@ -37,6 +37,20 @@ if(SMTG_ADD_VSTGUI)
 endif(SMTG_ADD_VSTGUI)
 # -------------------
 
+smtg_target_add_plugin_resources(HelloWorld
+    RESOURCES
+        resource/helloworldeditor.uidesc
+        resource/background.png
+        resource/animation_knob.png
+        resource/onoff_button.png
+        resource/background_2x.png
+        resource/animation_knob_2x.png
+        resource/onoff_button_2x.png
+        resource/background_3x.png
+        resource/animation_knob_3x.png
+        resource/onoff_button_3x.png
+)
+
 smtg_target_add_plugin_snapshots (HelloWorld
     RESOURCES
         resource/32C50013FF5F5CB4871C312DB4F42368_snapshot.png

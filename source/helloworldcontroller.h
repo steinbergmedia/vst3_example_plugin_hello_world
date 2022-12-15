@@ -6,7 +6,7 @@
 
 #include "public.sdk/source/vst/vsteditcontroller.h"
 
-namespace Steinberg__Wurst {
+namespace Steinberg {
 
 //------------------------------------------------------------------------
 //  HelloWorldController
@@ -54,4 +54,4 @@ protected:
 };
 
 //------------------------------------------------------------------------
-} // namespace Steinberg__Wurst
+} // namespace Steinberg
