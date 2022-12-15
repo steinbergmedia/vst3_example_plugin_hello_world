@@ -1,22 +1,13 @@
 cmake_minimum_required(VERSION 3.14.0)
 set(CMAKE_OSX_DEPLOYMENT_TARGET 10.13 CACHE STRING "")
 
-set(vst3sdk_SOURCE_DIR "/Users/renehansen/Developer/github/vst3sdk/vst3sdk")
-if(NOT vst3sdk_SOURCE_DIR)
-    message(FATAL_ERROR "Path to VST3 SDK is empty!")
-endif()
-
 project(HelloWorld
-    # This is your plug-in version number. Change it here only.
-    # Version number symbols usable in C++ can be found in
-    # source/version.h and ${PROJECT_BINARY_DIR}/projectversion.h.
-    VERSION 1.0.0.0 
+    VERSION 1.0.0.0 # This is your plug-in version number. Change it here only.
     DESCRIPTION "HelloWorld VST 3 Plug-in"
 )
 
-set(SMTG_VSTGUI_ROOT "${vst3sdk_SOURCE_DIR}")
+add_subdirectory(external)
 
-add_subdirectory(${vst3sdk_SOURCE_DIR} ${PROJECT_BINARY_DIR}/vst3sdk)
 smtg_enable_vst3_sdk()
 
 smtg_add_vst3plugin(HelloWorld
