@@ -6,12 +6,12 @@ This is a simple Hello World VTS 3 FX plug-in to demonstrate how to use the VST 
 
 ## How to clone and build
 
-Open a ´´´command prompt´´´ and do the following:
+Open a ```command prompt``` and do the following:
 
-´´´sh
+```sh
 git clone https://github.com/steinbergmedia/vst3_hello_world.git
 mkdir build
 cd build
 cmake ../vst3_hello_world
 cmake --build .
-´´´
+```
