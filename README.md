@@ -1,6 +1,6 @@
 # Hello World VST 3
 
-This is a simple Hello World VTS 3 FX plug-in to demonstrate how to use the VST 3 SDK as an external project.
+This is a simple Hello World VST 3 FX plug-in to demonstrate how to use the VST 3 SDK as an external project.
 
 > This plug-in was generated with the VST 3 Project Generator
 
