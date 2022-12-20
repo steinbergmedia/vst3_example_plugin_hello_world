@@ -143,20 +143,52 @@ tresult PLUGIN_API HelloWorldProcessor::canProcessSampleSize (int32 symbolicSamp
 //------------------------------------------------------------------------
 tresult PLUGIN_API HelloWorldProcessor::setState (IBStream* state)
 {
-	// called when we load a preset, the model has to be reloaded
+	if (!state)
+		return kResultFalse;
+
+	// called when we load a preset or project, the model has to be reloaded
+
 	IBStreamer streamer (state, kLittleEndian);
-	
+
+	float savedParam1 = 0.f;
+	if (streamer.readFloat (savedParam1) == false)
+		return kResultFalse;
+
+	int32 savedParam2 = 0;
+	if (streamer.readInt32 (savedParam2) == false)
+		return kResultFalse;
+
+	int32 savedBypass = 0;
+	if (streamer.readInt32 (savedBypass) == false)
+		return kResultFalse;
+
+	mParam1 = savedParam1;
+	mParam2 = savedParam2 > 0 ? 1 : 0;
+	mBypass = savedBypass > 0;
+
 	return kResultOk;
 }
 
 //------------------------------------------------------------------------
 tresult PLUGIN_API HelloWorldProcessor::getState (IBStream* state)
 {
-	// here we need to save the model
+	// here we need to save the model (preset or project)
+
+	float toSaveParam1 = mParam1;
+	int32 toSaveParam2 = mParam2;
+	int32 toSaveBypass = mBypass ? 1 : 0;
+
 	IBStreamer streamer (state, kLittleEndian);
+	streamer.writeFloat (toSaveParam1);
+	streamer.writeInt32 (toSaveParam2);
+	streamer.writeInt32 (toSaveBypass);
 
 	return kResultOk;
 }
+
+
+
+
 
 //------------------------------------------------------------------------
 } // namespace Steinberg
