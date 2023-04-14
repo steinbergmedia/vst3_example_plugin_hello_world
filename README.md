@@ -9,7 +9,7 @@ This is a simple Hello World VST 3 FX plug-in to demonstrate how to use the VST 
 Open a ```command prompt``` and do the following:
 
 ```sh
-git clone https://github.com/steinbergmedia/vst3_hello_world.git
+git clone https://github.com/steinbergmedia/vst3_example_plugin_hello_world.git
 mkdir build
 cd build
 cmake ../vst3_hello_world
