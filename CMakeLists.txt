@@ -6,11 +6,7 @@ project(HelloWorld
     DESCRIPTION "HelloWorld VST 3 Plug-in"
 )
 
-if(SMTG_VST3_LOCATION_DIR)
-    add_subdirectory(${SMTG_VST3_LOCATION_DIR} ${PROJECT_BINARY_DIR}/vst3sdk_build)
-else()
-    add_subdirectory(external)
-endif()
+add_subdirectory(external)
 
 smtg_enable_vst3_sdk()
 
