@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14.0)
 set(CMAKE_OSX_DEPLOYMENT_TARGET 10.13 CACHE STRING "")
 
 project(HelloWorld
-    VERSION 1.0.0.0 # This is your plug-in version number. Change it here only.
+    VERSION 1.0.0.0
     DESCRIPTION "HelloWorld VST 3 Plug-in"
 )
 
