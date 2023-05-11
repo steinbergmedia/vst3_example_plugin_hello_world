@@ -20,22 +20,18 @@ smtg_add_vst3plugin(HelloWorld
     source/helloworldentry.cpp
 )
 
-#- VSTGUI Wanted ----
-if(SMTG_ADD_VSTGUI)
-    target_sources(HelloWorld
-        PRIVATE
-            resource/helloworldeditor.uidesc
-    )
-    target_link_libraries(HelloWorld
-        PRIVATE
-            vstgui_support
-    )
-    smtg_target_add_plugin_resources(HelloWorld
-        RESOURCES
-            "resource/helloworldeditor.uidesc"
-    )
-endif(SMTG_ADD_VSTGUI)
-# -------------------
+target_sources(HelloWorld
+    PRIVATE
+        resource/helloworldeditor.uidesc
+)
+target_link_libraries(HelloWorld
+    PRIVATE
+        vstgui_support
+)
+smtg_target_add_plugin_resources(HelloWorld
+    RESOURCES
+        "resource/helloworldeditor.uidesc"
+)
 
 smtg_target_add_plugin_resources(HelloWorld
     RESOURCES
