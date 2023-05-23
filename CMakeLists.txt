@@ -18,19 +18,13 @@ smtg_add_vst3plugin(HelloWorld
     source/helloworldcontroller.h
     source/helloworldcontroller.cpp
     source/helloworldentry.cpp
+    resource/helloworldeditor.uidesc
 )
 
-target_sources(HelloWorld
-    PRIVATE
-        resource/helloworldeditor.uidesc
-)
 target_link_libraries(HelloWorld
     PRIVATE
+        sdk
         vstgui_support
-)
-smtg_target_add_plugin_resources(HelloWorld
-    RESOURCES
-        "resource/helloworldeditor.uidesc"
 )
 
 smtg_target_add_plugin_resources(HelloWorld
@@ -51,11 +45,6 @@ smtg_target_add_plugin_snapshots (HelloWorld
     RESOURCES
         resource/32C50013FF5F5CB4871C312DB4F42368_snapshot.png
         resource/32C50013FF5F5CB4871C312DB4F42368_snapshot_2.0x.png
-)
-
-target_link_libraries(HelloWorld
-    PRIVATE
-        sdk
 )
 
 smtg_target_configure_version_file(HelloWorld)
