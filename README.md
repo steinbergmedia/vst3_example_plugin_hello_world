@@ -14,6 +14,6 @@ Open a ```command prompt``` and do the following:
 git clone https://github.com/steinbergmedia/vst3_example_plugin_hello_world.git
 mkdir build
 cd build
-cmake ../vst3_hello_world
+cmake ../vst3_example_plugin_hello_world
 cmake --build .
 ```
