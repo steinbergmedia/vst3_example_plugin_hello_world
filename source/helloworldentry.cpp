@@ -21,7 +21,7 @@ using namespace Steinberg;
 // GetPluginFactory function!
 //------------------------------------------------------------------------
 
-BEGIN_FACTORY_DEF ("Steinberg Media Technologies GmbH", 
+BEGIN_FACTORY_DEF ("Steinberg Media Technologies", 
 			       "www.steinberg.net", 
 			       "mailto:info@steinberg.de")
 
