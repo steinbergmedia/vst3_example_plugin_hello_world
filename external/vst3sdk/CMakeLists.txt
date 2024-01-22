@@ -11,7 +11,7 @@ else()
     FetchContent_Declare(
         vst3sdk
         GIT_REPOSITORY https://github.com/steinbergmedia/vst3sdk.git
-        GIT_TAG v3.7.9_build_61
+        GIT_TAG v3.7.10_build_14
     )
     FetchContent_MakeAvailable(vst3sdk)
 endif()
