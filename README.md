@@ -29,6 +29,7 @@ git clone https://github.com/steinbergmedia/vst3_example_plugin_hello_world.git
 mkdir build
 cd build
 cmake -GXcode ../vst3_example_plugin_hello_world
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build .
 ```
 
