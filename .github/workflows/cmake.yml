@@ -44,7 +44,7 @@ jobs:
         run: ctest --verbose -C ${{env.BUILD_TYPE}}
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          name: build-VST3-${{env.BUILD_TYPE}}
+          name: build-VST3-${{matrix.os}}-${{env.BUILD_TYPE}}
           path: build/VST3/${{env.BUILD_TYPE}}
