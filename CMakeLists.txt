@@ -6,6 +6,10 @@ project(HelloWorld
     DESCRIPTION "HelloWorld VST 3 Plug-in"
 )
 
+if(APPLE)
+    enable_language(OBJCXX)
+endif()
+
 add_subdirectory(external)
 
 smtg_enable_vst3_sdk()
